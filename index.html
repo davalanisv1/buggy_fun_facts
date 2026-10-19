@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+
+
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Buggy Fun Facts!</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#0b0f19">
+        <link rel="icon" type="image/svg+xml" href="/assets/icons/icon.svg">
+        <link rel="stylesheet" href="/assets/CSS/style.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Dhurjati&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Unbounded:wght@200..900&display=swap" rel="stylesheet">
+    </head>
+
+    <body>
+    
+        <main class="page-wrapper">
+            <section class="intro-panel">
+                <p class="eyebrow">A tiny window into the wild</p>
+                <h1>Have you ever wondered...</h1>
+                <p>What is today's insect? Every insect has a special role in our environment. This little corner of the web brings you a new insect and a fun fact from the Daily Insect blog.</p>
+                <p>Things may get a little buggy along the way—just like nature intended. ;)</p>
+            </section>
+
+            <section class="insect-card" aria-labelledby="card-title">
+                <div class="card-heading">
+                    <p class="eyebrow">Today's discovery</p>
+                    <h2 id="card-title">Insect of the day</h2>
+                </div>
+                <p id="status" class="status" role="status" aria-live="polite">Fetching today's insect…</p>
+                <img id="insect-image" class="insect-image" alt="" hidden>
+                <div class="insect-details" hidden>
+                    <h3 id="insect-name"></h3>
+                    <p id="scientific-name" class="scientific-name"></p>
+                    <p id="fun-fact" class="fun-fact"></p>
+                </div>
+            </section>
+        </main>
+        <script src="/assets/JS/app.js" defer></script>
+        <script src="/assets/JS/glitch.js" defer></script>
+    </body>
+</html>
