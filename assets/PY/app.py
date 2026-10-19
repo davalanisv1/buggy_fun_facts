@@ -1,10 +1,11 @@
 from pathlib import Path
+import sys
 
 from flask import Flask, jsonify, send_from_directory
 
 from assets.PY.code import get_ins
 
-PROJECT_ROOT = Path(__file__).resolve().parents[2]
+PROJECT_ROOT = Path(getattr(sys, "_MEIPASS", Path(__file__).resolve().parents[2]))
 app = Flask(__name__, static_folder=str(PROJECT_ROOT / "assets"), static_url_path="/assets")
 
 
@@ -21,4 +22,4 @@ def insect_of_the_day():
     return jsonify(insect)
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(debug=False)

@@ -33,6 +33,20 @@ Open <http://127.0.0.1:5000> in a browser. Keep the terminal process running whi
 
 > `index.html` uses `/api/insect` to retrieve data, so run it through Flask rather than opening the HTML file directly.
 
+## Build a standalone Linux executable
+
+The PyInstaller spec bundles the app, scraper dependencies, HTML, CSS, JavaScript, and local assets into a single Linux executable. Build it on Linux for the same CPU architecture as the computer where it will run.
+
+```bash
+source .venv/bin/activate
+python -m pip install pyinstaller
+pyinstaller --clean --noconfirm buggy-fun-facts.spec
+```
+
+Run the resulting `dist/BuggyFunFacts` executable. It starts the local web server and opens the website in your default browser. Keep the process running while using the site; press Ctrl+C in its terminal to stop it. The executable still needs internet access to retrieve the daily insect and its image.
+
+This produces a standalone executable, not an AppImage. It bundles Python and project assets, but Linux systems may still need compatible system libraries and a browser.
+
 ## API
 a
 `GET /api/insect` returns JSON with these fields:
